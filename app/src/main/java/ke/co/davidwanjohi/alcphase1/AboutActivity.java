@@ -1,5 +1,6 @@
 package ke.co.davidwanjohi.alcphase1;
 
+import android.net.http.SslError;
 import android.os.Bundle;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -9,6 +10,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import android.view.View;
+import android.webkit.SslErrorHandler;
 import android.webkit.WebResourceRequest;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
@@ -30,7 +32,7 @@ public class AboutActivity extends AppCompatActivity {
         WebSettings webSettings = webView.getSettings();
         webSettings.setJavaScriptEnabled(true);
 
-
+        webSettings.setDomStorageEnabled(true);
         webView.loadUrl("https://andela.com/alc/");
 
         webView.setWebViewClient(new WebViewClient());
@@ -46,6 +48,13 @@ public class AboutActivity extends AppCompatActivity {
         }
 
 
+        @Override
+        public void onReceivedSslError(WebView view, SslErrorHandler handler, SslError error) {
+
+
+            handler.proceed(); // Ignore SSL certificate errors
+
+        }
     }
 
 }
