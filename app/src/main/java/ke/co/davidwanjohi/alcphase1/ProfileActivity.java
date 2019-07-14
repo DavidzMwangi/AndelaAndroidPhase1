@@ -9,26 +9,18 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import android.view.View;
-import android.webkit.WebView;
 
-public class AboutActivity extends AppCompatActivity {
+public class ProfileActivity extends AppCompatActivity {
 
-    WebView webView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_about);
+        setContentView(R.layout.activity_profile);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-
-        webView=findViewById(R.id.webview);
-
-        webView.loadUrl("https://andela.com/alc/");
-        setContentView(webView);
-
-
     }
 
 }
