@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
         profile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(MainActivity.this,AboutActivity.class);
+                Intent intent=new Intent(MainActivity.this,ProfileActivity.class);
                 startActivity(intent);
             }
         });

@@ -9,6 +9,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import android.view.View;
+import android.webkit.WebResourceRequest;
+import android.webkit.WebSettings;
 import android.webkit.WebView;
 
 public class AboutActivity extends AppCompatActivity {
@@ -24,9 +26,24 @@ public class AboutActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         webView=findViewById(R.id.webview);
+// Enable Javascript
+        WebSettings webSettings = webView.getSettings();
+        webSettings.setJavaScriptEnabled(true);
+
 
         webView.loadUrl("https://andela.com/alc/");
-        setContentView(webView);
+
+        webView.setWebViewClient(new WebViewClient());
+
+
+
+    }
+
+    public class WebViewClient extends android.webkit.WebViewClient{
+        @Override
+        public boolean shouldOverrideUrlLoading(WebView view, WebResourceRequest request) {
+            return super.shouldOverrideUrlLoading(view, request);
+        }
 
 
     }

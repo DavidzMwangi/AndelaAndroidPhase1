@@ -12,7 +12,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="70dp"
-        android:text="Welcome toALC 4.0"
+        android:text="Welcome to ALC 4.0"
+        android:textSize="30sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -24,11 +26,16 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
         android:id="@+id/about_btn"
+        android:textColor="@android:color/white"
+        android:background="@drawable/rounded_rectangle_button"
         android:text="ABOUT ALC"/>
 
     <androidx.appcompat.widget.AppCompatButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:textColor="@android:color/white"
+        android:background="@drawable/rounded_rectangle_button"
         android:id="@+id/profile_btn"
         android:text="MY PROFILE"/>
 </LinearLayout>
